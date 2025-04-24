@@ -7,7 +7,7 @@ function getValues() {
     let userString = inputElement.value;
     //get what the user typed out of the <input/> 
     //use the let element you used to get elementById 
-    if (userString.length < 2) {
+    if (userString.length) {
         //validate that the user typed atlest two characters
         //if not show a SWAL 
         swal.fire({
@@ -21,24 +21,26 @@ function getValues() {
     //return message is based off of the let 
     let cleanedRevString = checkForPalindrome(userString);
 
-    //revString is a new name that will go into the reverseMessage
-    //function.
+    //cleanedRevString is a new name that is assinged to the actions of
+    // checkForPalindrome(userString) anything inside the parameters of 
+    //checkForPalindrome (), will take on the functions of checkForPalindrome
     displayResults(cleanedRevString);
+    // anything in the parameters of displayResults will take on the functions 
+    // of displayResults. cleanedRevString will  
 
 
-    //display the reversed message
+
 }
-//reverse the message
+// clean and reverse the message 
 function checkForPalindrome(message) {
 
-    let cleaned = message.replace(/[^a-z0-9]/gi, '').toLowerCase();
+    let clean = message.replace(/[^a-z0-9]/gi, '').toLowerCase();
     //gi means case insensitive
     let revWord = '';
 
-    for (let idx = cleaned.length - 1; idx >= 0; idx = idx - 1) {
-        //this starts at the end of the word 
-        //reWord += message[idx];
-        let char = cleaned[idx];
+    for (let idx = clean.length - 1; idx >= 0; idx = idx - 1) {
+
+        let char = clean[idx];
         //push is only for arrays
         //char reprsents characters you say let char = message [idx] which
         //is the letters index 
@@ -48,7 +50,7 @@ function checkForPalindrome(message) {
         //this is equivalent revWord.push
     }
 
-    return cleaned == revWord;
+    return clean == revWord;
 
 
 }
