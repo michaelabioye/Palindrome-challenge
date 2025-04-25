@@ -2,20 +2,18 @@
 function getValues() {
     let alertDiv = document.getElementById('alertDiv');
     alertDiv.classList.add('invisible');
+
+
+
     let inputElement = document.getElementById('msgInput');
     //find the <input id='msgInput' /> element
-    let userString = inputElement.value;
+    let userString = inputElement.value
     //get what the user typed out of the <input/> 
     //use the let element you used to get elementById 
-    if (userString.length) {
-        //validate that the user typed atlest two characters
-        //if not show a SWAL 
-        swal.fire({
-            backdrop: false,
-            title: 'uh oh',
-            text: 'please enter a palindrome messege',
-            icon: 'error'
-        })
+
+    if (userString == "") {
+        return false;
+
     };
 
     //return message is based off of the let 
